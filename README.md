@@ -14,13 +14,9 @@ git clone https://github.com/scr512/docker-diskover-web.git
 docker build --no-cache -t scr512/docker-diskover-web ~/Docker/docker-diskover-web
 ```
 3. Run
+**ES_HOST must be set to your remote Elasticsearch host**
 ```bash
-docker run -d --restart=always --name docker-diskover-web -p 8081:8081 scr512/docker-diskover-web
-```
-# Assumptions
-* Elasticsearch is running on the same host. If not, then you'll need to pass in the hostname of your Elasticsearch host
-```bash
-docker run -d --restart=always --name docker-diskover-web p 8081:8081 -e ES_HOST=hostname.local.domain.com scr512/docker-diskover-web
+docker run -d --restart=always --name docker-diskover-web -p 8081:8081 -e ES_HOST=elasticsearch.domain.com scr512/docker-diskover-web
 ```
 * Docker build example above assumes you always want the latest and greatest release of [diskover-web](https://github.com/shirosaidev/diskover-web)
 # Other things
