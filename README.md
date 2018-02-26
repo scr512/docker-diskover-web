@@ -15,7 +15,7 @@ docker build --no-cache -t scr512/docker-diskover-web ~/Docker/docker-diskover-w
 ```
 3. Run
 
-```**ES_HOST must be set to your remote Elasticsearch host**```
+**ES_HOST must be set to your remote Elasticsearch host**
 ```bash
 docker run -d --restart=always --name docker-diskover-web -p 8081:8081 -e ES_HOST=elasticsearch.domain.com scr512/docker-diskover-web
 ```
