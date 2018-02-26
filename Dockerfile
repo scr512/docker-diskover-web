@@ -7,7 +7,6 @@ RUN curl -s https://getcomposer.org/installer | php; mv ./composer.phar /usr/loc
 RUN mkdir /opt/diskover-web 
 RUN git clone https://github.com/shirosaidev/diskover-web.git /opt/diskover-web
 RUN cd /opt/diskover-web; /usr/local/bin/composer install
-#RUN sed -i 's/localhost/hpc-admin0.nahpc.arm.com/' /opt/diskover-web/src/diskover/Constants.php
 RUN ln -s /opt/diskover-web/public/dashboard.php /opt/diskover-web/public/index.php
 RUN chmod 775 -R /opt/diskover-web
 WORKDIR /opt/diskover-web
