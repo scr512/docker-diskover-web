@@ -6,6 +6,7 @@ RUN apt-get install -y git php curl php-curl supervisor
 RUN curl -s https://getcomposer.org/installer | php; mv ./composer.phar /usr/local/bin/composer
 RUN mkdir /opt/diskover-web 
 RUN git clone https://github.com/shirosaidev/diskover-web.git /opt/diskover-web
+RUN mv /opt/diskover-web/src/diskover/Constants.php.sample /opt/diskover-web/src/diskover/Constants.php
 RUN cd /opt/diskover-web; /usr/local/bin/composer install
 RUN ln -s /opt/diskover-web/public/dashboard.php /opt/diskover-web/public/index.php
 RUN chmod 775 -R /opt/diskover-web
